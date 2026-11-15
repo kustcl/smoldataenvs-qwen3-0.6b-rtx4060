@@ -1,0 +1,259 @@
+{
+ "model": "models/Qwen3-0.6B",
+ "mode": "agent",
+ "n_records": 1486,
+ "n_ungraded": 0,
+ "ungraded_reasons": {},
+ "overall": {
+  "n_tasks": 373,
+  "pass@1_v1": 0.3418,
+  "pass@1_v2": 0.3083,
+  "ci95_v1": [
+   0.2955,
+   0.3914
+  ],
+  "ci95_v2": [
+   0.2636,
+   0.3569
+  ],
+  "v1_minus_v2": 0.0335
+ },
+ "by_tier": {
+  "easy": {
+   "n_tasks": 129,
+   "pass@1_v1": 0.6453,
+   "pass@1_v2": 0.5969,
+   "ci95_v1": [
+    0.5597,
+    0.7226
+   ],
+   "ci95_v2": [
+    0.5106,
+    0.6776
+   ],
+   "v1_minus_v2": 0.0484
+  },
+  "medium": {
+   "n_tasks": 244,
+   "pass@1_v1": 0.1814,
+   "pass@1_v2": 0.1557,
+   "ci95_v1": [
+    0.1381,
+    0.2345
+   ],
+   "ci95_v2": [
+    0.1156,
+    0.2065
+   ],
+   "v1_minus_v2": 0.0256,
+   "pass@2_v1": 0.278
+  }
+ },
+ "by_level": {
+  "1": {
+   "n_tasks": 129,
+   "pass@1_v1": 0.6453,
+   "pass@1_v2": 0.5969,
+   "ci95_v1": [
+    0.5597,
+    0.7226
+   ],
+   "ci95_v2": [
+    0.5106,
+    0.6776
+   ],
+   "v1_minus_v2": 0.0484
+  },
+  "2": {
+   "n_tasks": 181,
+   "pass@1_v1": 0.2196,
+   "pass@1_v2": 0.1892,
+   "ci95_v1": [
+    0.1655,
+    0.2854
+   ],
+   "ci95_v2": [
+    0.1388,
+    0.2525
+   ],
+   "v1_minus_v2": 0.0304,
+   "pass@4_v1": 0.4586
+  },
+  "3": {
+   "n_tasks": 63,
+   "pass@1_v1": 0.0714,
+   "pass@1_v2": 0.0595,
+   "ci95_v1": [
+    0.0296,
+    0.1625
+   ],
+   "ci95_v2": [
+    0.0227,
+    0.147
+   ],
+   "v1_minus_v2": 0.0119,
+   "pass@2_v1": 0.1138
+  }
+ },
+ "by_reward_mode": {
+  "exact_bool": {
+   "n_tasks": 2,
+   "pass@1_v1": 0.5,
+   "pass@1_v2": 0.5,
+   "ci95_v1": [
+    0.0945,
+    0.9055
+   ],
+   "ci95_v2": [
+    0.0945,
+    0.9055
+   ],
+   "v1_minus_v2": 0.0,
+   "pass@4_v1": 1.0
+  },
+  "exact_short": {
+   "n_tasks": 103,
+   "pass@1_v1": 0.301,
+   "pass@1_v2": 0.2961,
+   "ci95_v1": [
+    0.2209,
+    0.3954
+   ],
+   "ci95_v2": [
+    0.2166,
+    0.3903
+   ],
+   "v1_minus_v2": 0.0049,
+   "pass@2_v1": 0.445
+  },
+  "flexible": {
+   "n_tasks": 6,
+   "pass@1_v1": 0.0417,
+   "pass@1_v2": 0.0417,
+   "ci95_v1": [
+    0.0024,
+    0.4387
+   ],
+   "ci95_v2": [
+    0.0024,
+    0.4387
+   ],
+   "v1_minus_v2": 0.0,
+   "pass@4_v1": 0.1667
+  },
+  "list": {
+   "n_tasks": 23,
+   "pass@1_v1": 0.1848,
+   "pass@1_v2": 0.1087,
+   "ci95_v1": [
+    0.0763,
+    0.3835
+   ],
+   "ci95_v2": [
+    0.0343,
+    0.2951
+   ],
+   "v1_minus_v2": 0.0761,
+   "pass@4_v1": 0.3913
+  },
+  "list_csv": {
+   "n_tasks": 4,
+   "pass@1_v1": 0.0,
+   "pass@1_v2": 0.0,
+   "ci95_v1": [
+    0.0,
+    0.4899
+   ],
+   "ci95_v2": [
+    0.0,
+    0.4899
+   ],
+   "v1_minus_v2": 0.0,
+   "pass@4_v1": 0.0
+  },
+  "numeric": {
+   "n_tasks": 235,
+   "pass@1_v1": 0.3872,
+   "pass@1_v2": 0.3436,
+   "ci95_v1": [
+    0.3272,
+    0.4509
+   ],
+   "ci95_v2": [
+    0.2858,
+    0.4064
+   ],
+   "v1_minus_v2": 0.0436
+  }
+ },
+ "by_dataset_seen_in_train": {
+  "True": {
+   "n_tasks": 373,
+   "pass@1_v1": 0.3418,
+   "pass@1_v2": 0.3083,
+   "ci95_v1": [
+    0.2955,
+    0.3914
+   ],
+   "ci95_v2": [
+    0.2636,
+    0.3569
+   ],
+   "v1_minus_v2": 0.0335
+  }
+ },
+ "by_split": {
+  "train": {
+   "n_tasks": 373,
+   "pass@1_v1": 0.3418,
+   "pass@1_v2": 0.3083,
+   "ci95_v1": [
+    0.2955,
+    0.3914
+   ],
+   "ci95_v2": [
+    0.2636,
+    0.3569
+   ],
+   "v1_minus_v2": 0.0335
+  }
+ },
+ "diagnostics": {
+  "command_filtered": 0,
+  "timed_out": 1,
+  "empty_prediction": 431,
+  "truncated_completions": 0,
+  "agent_no_answer_file": 431,
+  "agent_hit_max_turns": 411,
+  "agent_context_exhausted": 0,
+  "v1_rungs": {
+   "exact": 341,
+   "list": 10,
+   "numeric": 154,
+   "numeric_scaled": 5
+  },
+  "v1_pass_v2_fail": 50,
+  "v2_pass_v1_fail": 0,
+  "v1_only_by_v2_reason": {
+   "list_miss": 6,
+   "list_order_or_value": 1,
+   "not_a_bare_number": 4,
+   "numeric_miss": 39
+  },
+  "v1_only_by_v1_rung": {
+   "list": 7,
+   "numeric": 39,
+   "numeric_scaled": 4
+  }
+ },
+ "throughput": {
+  "completion_tokens": 806440,
+  "prompt_tokens": 11359745,
+  "reasoning_tokens": 0,
+  "gen_seconds_sum": 421246.13,
+  "per_request_tok_per_s": 1.91,
+  "wall_seconds": null,
+  "aggregate_tok_per_s": null,
+  "mean_completion_tokens": 542.7
+ }
+}

@@ -1,0 +1,19 @@
+# Sandbox image for Windows hosts (Docker Desktop, Linux containers).
+#
+# Unlike the Spark's image (an empty rootfs built with `docker import` that borrows the
+# host's /usr), a Windows host has no Linux Python to lend. So this image carries its
+# own interpreter and the data packages the task programs are told to expect:
+# "Python 3 + pandas + numpy + scikit-learn + scipy are pre-installed" (SFT system prompt).
+#
+# The guard dir is bind-mounted at run time to /opt/guard, not baked in, so
+# smolenv_guard/ stays the single source of truth.
+FROM python:3.11-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1
+
+RUN pip install --no-cache-dir -i https://mirrors.aliyun.com/pypi/simple/ \
+        pandas numpy pyarrow scipy scikit-learn openpyxl
+
+WORKDIR /workdir

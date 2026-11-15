@@ -1,0 +1,33 @@
+# Environments and caches
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Secrets: keys are read from the environment, never from files in the repo
+.env
+.env.*
+*.key
+
+# Downloaded data and run outputs (large, or under per-dataset Kaggle licenses)
+data/SmolDataEnvs/
+data/task_files/
+data/sft_*/
+runs/
+logs/
+milestones/
+*.safetensors
+*.parquet
+
+# Local caches on D: (Windows port)
+.cache/
+runs/
+logs/
+
+# Windows port: model weights, SwanLab logs, per-run sandboxes
+models/
+swanlog/
+grpo_pool_150/sandboxes/
+
+# Hugging Face dataset cache (dataset card assets, not ours)
+data/SmolDataEnvs-sft/

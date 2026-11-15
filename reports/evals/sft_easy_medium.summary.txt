@@ -1,0 +1,12 @@
+model=runs/sft-0.6b-2048-e1/merged  mode=agent  records=90  ungraded=0
+slice                                  n  v1 pass@1           95% CI  v2 pass@1   v1-v2
+overall                               90     0.2556 (0.1767, 0.3544)     0.2111  0.0444
+tier=easy                             16     0.5625  (0.3318, 0.769)     0.4375   0.125
+tier=medium                           74     0.1892 (0.1162, 0.2929)     0.1622   0.027
+dataset_seen_in_train=False           21     0.0476 (0.0085, 0.2267)     0.0476     0.0
+dataset_seen_in_train=True            69     0.3188 (0.2209, 0.4358)     0.2609   0.058
+reward_mode=exact_short               38     0.2368 (0.1299, 0.3921)     0.2368     0.0
+reward_mode=numeric                   52     0.2692 (0.1677, 0.4025)     0.1923  0.0769
+split=eval                            90     0.2556 (0.1767, 0.3544)     0.2111  0.0444
+diagnostics: {"command_filtered": 0, "timed_out": 0, "empty_prediction": 33, "truncated_completions": 0, "agent_no_answer_file": 33, "agent_hit_max_turns": 29, "agent_context_exhausted": 0, "v1_rungs": {"exact": 17, "numeric": 5, "numeric_scaled": 1}, "v1_pass_v2_fail": 4, "v2_pass_v1_fail": 0, "v1_only_by_v2_reason": {"numeric_miss": 4}, "v1_only_by_v1_rung": {"numeric": 3, "numeric_scaled": 1}}
+throughput:  {"completion_tokens": 65634, "prompt_tokens": 1545303, "reasoning_tokens": 0, "gen_seconds_sum": 25303.23, "per_request_tok_per_s": 2.59, "wall_seconds": 3467.92, "aggregate_tok_per_s": 18.93, "mean_completion_tokens": 729.3}

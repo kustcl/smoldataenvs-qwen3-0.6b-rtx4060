@@ -1,0 +1,260 @@
+{
+    "scope":  "Existing Windows Qwen3-0.6B runs; no model inference or retraining",
+    "evals":  {
+                  "eval-sft-b4-easy-medium":  {
+                                                  "n":  90,
+                                                  "correct":  19.0,
+                                                  "submitted":  57,
+                                                  "strict_accuracy":  0.2111111111111111,
+                                                  "correct_if_submitted":  0.3333333333333333,
+                                                  "no_answer":  33,
+                                                  "hit_max_turns":  29,
+                                                  "mean_calls":  6.466666666666667,
+                                                  "mean_tokens":  729.2666666666667,
+                                                  "tasks_with_repeated_commands":  39,
+                                                  "duplicate_commands":  275,
+                                                  "tool_error_messages_heuristic":  347,
+                                                  "config":  {
+                                                                 "cmd":  "run",
+                                                                 "endpoint":  null,
+                                                                 "model":  null,
+                                                                 "hf_model":  "runs/sft-0.6b-2048-e1/merged",
+                                                                 "hf_adapter":  null,
+                                                                 "hf_max_prompt_tokens":  8192,
+                                                                 "hf_batch_size":  4,
+                                                                 "hf_batch_window_ms":  20.0,
+                                                                 "api_key_env":  "OPENAI_API_KEY",
+                                                                 "extra_body":  "",
+                                                                 "no_think":  false,
+                                                                 "split":  "eval",
+                                                                 "slice":  null,
+                                                                 "tiers":  "easy,medium",
+                                                                 "limit":  0,
+                                                                 "task_ids":  null,
+                                                                 "mode":  "agent",
+                                                                 "max_turns":  12,
+                                                                 "max_tokens":  1024,
+                                                                 "repetition_penalty":  1.05,
+                                                                 "temperature":  0.0,
+                                                                 "top_p":  1.0,
+                                                                 "n_samples":  1,
+                                                                 "seed":  0,
+                                                                 "concurrency":  8,
+                                                                 "exec_timeout":  90.0,
+                                                                 "request_timeout":  600.0,
+                                                                 "data_root":  "D:\\python\\python_code\\torch_learnling\\LLM_Research\\smoldataenvs-win\\data\\task_files",
+                                                                 "require_data":  true,
+                                                                 "sandbox":  "win-docker",
+                                                                 "unsafe_no_sandbox":  false,
+                                                                 "mock":  null,
+                                                                 "resume":  true,
+                                                                 "verbose":  false,
+                                                                 "out":  "runs/eval-sft-b4-easy-medium",
+                                                                 "sandbox_backend":  "win-docker",
+                                                                 "n_tasks":  90
+                                                             }
+                                              },
+                  "eval-grpo150-easy-medium":  {
+                                                   "n":  90,
+                                                   "correct":  14.0,
+                                                   "submitted":  48,
+                                                   "strict_accuracy":  0.15555555555555556,
+                                                   "correct_if_submitted":  0.2916666666666667,
+                                                   "no_answer":  42,
+                                                   "hit_max_turns":  37,
+                                                   "mean_calls":  7.055555555555555,
+                                                   "mean_tokens":  862.6666666666666,
+                                                   "tasks_with_repeated_commands":  43,
+                                                   "duplicate_commands":  329,
+                                                   "tool_error_messages_heuristic":  385,
+                                                   "config":  {
+                                                                  "cmd":  "run",
+                                                                  "endpoint":  null,
+                                                                  "model":  null,
+                                                                  "hf_model":  "runs/sft-0.6b-2048-e1/merged",
+                                                                  "hf_adapter":  "runs/grpo-agent-plus150/final",
+                                                                  "hf_max_prompt_tokens":  8192,
+                                                                  "hf_batch_size":  4,
+                                                                  "hf_batch_window_ms":  20.0,
+                                                                  "api_key_env":  "OPENAI_API_KEY",
+                                                                  "extra_body":  "",
+                                                                  "no_think":  false,
+                                                                  "split":  "eval",
+                                                                  "slice":  null,
+                                                                  "tiers":  "easy,medium",
+                                                                  "limit":  0,
+                                                                  "task_ids":  null,
+                                                                  "mode":  "agent",
+                                                                  "max_turns":  12,
+                                                                  "max_tokens":  1024,
+                                                                  "repetition_penalty":  1.05,
+                                                                  "temperature":  0.0,
+                                                                  "top_p":  1.0,
+                                                                  "n_samples":  1,
+                                                                  "seed":  0,
+                                                                  "concurrency":  8,
+                                                                  "exec_timeout":  90.0,
+                                                                  "request_timeout":  600.0,
+                                                                  "data_root":  "D:\\python\\python_code\\torch_learnling\\LLM_Research\\smoldataenvs-win\\data\\task_files",
+                                                                  "require_data":  true,
+                                                                  "sandbox":  "win-docker",
+                                                                  "unsafe_no_sandbox":  false,
+                                                                  "mock":  null,
+                                                                  "resume":  true,
+                                                                  "verbose":  false,
+                                                                  "out":  "runs/eval-grpo150-easy-medium",
+                                                                  "sandbox_backend":  "win-docker",
+                                                                  "n_tasks":  90
+                                                              }
+                                               }
+              },
+    "paired":  {
+                   "eval-grpo150-easy-medium":  {
+                                                    "common_tasks":  90,
+                                                    "lost":  [
+                                                                 "0000_988_988657_qa_4",
+                                                                 "0001_104_1104901_qa_3",
+                                                                 "0001_116_1116342_qa_3",
+                                                                 "0001_133_1133625_qa_3",
+                                                                 "0001_134_1134780_qa_3",
+                                                                 "0011_355_11355842_qa_1"
+                                                             ],
+                                                    "gained":  [
+                                                                   "0001_065_1065379_qa_3"
+                                                               ],
+                                                    "mcnemar_exact_p":  0.125,
+                                                    "lost_reasons":  {
+                                                                         "no_answer_file":  3,
+                                                                         "miss":  2,
+                                                                         "numeric_miss":  1
+                                                                     }
+                                                }
+               },
+    "training":  {
+                     "1-46":  {
+                                  "rewards/SmolDataEnv/mean":  0.44565217391304346,
+                                  "rewards/reward_submitted/mean":  0.7554347826086957,
+                                  "frac_reward_zero_std":  0.15217391304347827,
+                                  "completions/clipped_ratio":  0.016304347826086956,
+                                  "entropy":  0.24248882101686753,
+                                  "tools/call_frequency":  3.989130434782609,
+                                  "completions/mean_length":  459.80434782608694
+                              },
+                     "47-92":  {
+                                   "rewards/SmolDataEnv/mean":  0.43478260869565216,
+                                   "rewards/reward_submitted/mean":  0.7391304347826086,
+                                   "frac_reward_zero_std":  0.13043478260869565,
+                                   "completions/clipped_ratio":  0.02717391304347826,
+                                   "entropy":  0.24109566525515655,
+                                   "tools/call_frequency":  3.6630434782608696,
+                                   "completions/mean_length":  426.0652173913044
+                               },
+                     "93-138":  {
+                                    "rewards/SmolDataEnv/mean":  0.5489130434782609,
+                                    "rewards/reward_submitted/mean":  0.7989130434782609,
+                                    "frac_reward_zero_std":  0.1956521739130435,
+                                    "completions/clipped_ratio":  0.010869565217391304,
+                                    "entropy":  0.22222170784421588,
+                                    "tools/call_frequency":  3.8315217391304346,
+                                    "completions/mean_length":  421.30434782608694
+                                },
+                     "1-138":  {
+                                   "rewards/SmolDataEnv/mean":  0.47644927536231885,
+                                   "rewards/reward_submitted/mean":  0.7644927536231884,
+                                   "frac_reward_zero_std":  0.15942028985507245,
+                                   "completions/clipped_ratio":  0.018115942028985508,
+                                   "entropy":  0.23526873137208,
+                                   "tools/call_frequency":  3.8278985507246377,
+                                   "completions/mean_length":  435.72463768115944
+                               },
+                     "submission_only_signal_steps":  [
+                                                          9,
+                                                          16,
+                                                          27,
+                                                          44,
+                                                          46,
+                                                          47,
+                                                          49,
+                                                          58,
+                                                          64,
+                                                          66,
+                                                          80,
+                                                          84,
+                                                          96,
+                                                          108,
+                                                          123,
+                                                          125,
+                                                          130
+                                                      ],
+                     "zero_gradient_steps":  22,
+                     "nonzero_clip_ratio_steps":  0
+                 },
+    "completion_schema":  {
+                              "step":  "int",
+                              "prompt":  "str",
+                              "completion":  "str",
+                              "reward_lenient":  "float",
+                              "reward_submitted":  "float",
+                              "reward_tool_calls":  "float",
+                              "SmolDataEnv":  "float",
+                              "advantage":  "float"
+                          },
+    "completion_example":  {
+                               "step":  "1",
+                               "prompt":  "system\nYou are an autonomous data-analysis agent operating in a sandboxed Linux container. Your only tool is `bash`. The dataset files are in /home/user/input/. Python 3 + pandas + numpy + scikit-lear",
+                               "completion":  "I\u0027ll solve this step by step.\nPlan: Goal: Find average opening price of Nifty 50 across all recorded dates.\nSteps:\n1. Load both CSV files\n2. Filter for Nifty 50 column, check if there\u0027s a \u0027open\u0027 colum",
+                               "reward_lenient":  "1.0",
+                               "reward_submitted":  "1.0",
+                               "reward_tool_calls":  "4.0",
+                               "SmolDataEnv":  "1.0",
+                               "advantage":  "1.4980956315994263"
+                           },
+    "completion_files":  138,
+    "completion_reward_audit":  {
+                                    "rollouts":  552,
+                                    "wrong_positive_advantage":  39,
+                                    "step9_rewards_and_advantages":  [
+                                                                         {
+                                                                             "SmolDataEnv":  0.0,
+                                                                             "reward_submitted":  0.0,
+                                                                             "advantage":  -0.49800798296928406
+                                                                         },
+                                                                         {
+                                                                             "SmolDataEnv":  0.0,
+                                                                             "reward_submitted":  1.0,
+                                                                             "advantage":  1.4940239191055298
+                                                                         },
+                                                                         {
+                                                                             "SmolDataEnv":  0.0,
+                                                                             "reward_submitted":  0.0,
+                                                                             "advantage":  -0.49800798296928406
+                                                                         },
+                                                                         {
+                                                                             "SmolDataEnv":  0.0,
+                                                                             "reward_submitted":  0.0,
+                                                                             "advantage":  -0.49800798296928406
+                                                                         }
+                                                                     ],
+                                    "step9_positive_completion_excerpt":  [
+                                                                              "I\u0027ll analyze the dataset step by step to find which gender has the higher appointment show-up rate.\n\u003ctool_call\u003e\n{\"name\": \"bash\", \"arguments\": {\"command\": \"cd /home/user/input \u0026\u0026 head -3 KaggleV2-May-2016.csv \u0026\u0026 echo \\\"---\\\" \u0026\u0026 wc -l KaggleV2-May-2016.csv\"}}\n\u003c/tool_call\u003e\nuser\n\u003ctool_response\u003e\nPatientId,AppointmentID,Gender,ScheduledDay,AppointmentDay,Age,Neighbourhood,Scholarship,Hipertension,Diabetes,Alcoholism,Handcap,SMS_received,No-show\n29872499824296,5642903,F,2016-04-29T18:38:08Z,2016-04-29T00:00:00Z,62,JARDIM DA PENHA,0,1,0,0,0,0,No\n558997776694438,5642503,M,2016-04-29T16:08:27Z,2016-04-29T00:00:00Z,56,JARDIM DA PENHA,0,0,0,0,0,0,No\n---\n110528 KaggleV2-May-2016.csv\n\n\u003c/tool_response\u003e\nassistant\n\u003cthink\u003e\n\n\u003c/think\u003e\n\n\u003ctool_call\u003e\n{\"name\": \"bash\", \"arguments\": {\"command\": \"cd /home/user/input \u0026\u0026 python3 -c \\\"\\nimport pandas as pd\\ndf = pd.read_csv(\u0027KaggleV2-May-2016.csv\u0027)\\nprint(df.shape)\\nprint(df[\u0027Gender\u0027].value_counts())\\nprint(df.groupby(\u0027Gender\u0027)[\u0027No-show\u0027].sum())\\n\\\"\"}}\n\u003c/tool_call\u003e\nuser\n\u003ctool_response\u003e\n(110527, 14)\nGender\nF    71840\nM    38687\nName: count, dtype: int64\nGender\nF    NoNoNoNoNoYesYesNoNoNoNoNoNoYesNoNoYesYesNoNoN...\nM    NoYesNoNoYesNoNoYesNoNoNoNoNoNoYesNoNoNoNoNoNo...\nName: No-show, dtype: str\n\n\u003c/tool_response\u003e\nassistant\n\u003cthink\u003e\n\n\u003c/think\u003e\n\nThe analysis is clear:\n- F: 71840 out of 110526 -\u003e 65.73% show-up rate\n- M: 38687 out of 110526 -\u003e 34.95% show-up rate\nThe question asks: **Which gender has the higher appointment show-up rate** — F has 65.73% vs M has 34.95%.\n\u003ctool_call\u003e\n{\"name\": \"bash\", \"arguments\": {\"command\": \"printf %s F \u003e /workdir/answer.txt\"}}\n\u003c/tool_call\u003e\nuser\n\u003ctool_response\u003e\n(empty output, rc=0)\n\u003c/tool_response\u003e\nassistant\n\u003cthink\u003e\n\n\u003c/think\u003e\n\n**F (Female)** has the higher appointment show-up rate with approximately 65.73% of female patients had no-show appointments compared to 34.95% for male patients."
+                                                                          ]
+                                },
+    "token_budget_audit":  {
+                               "eval-sft-b4-easy-medium":  {
+                                                               "transcripts_over_3072":  31,
+                                                               "eval_prompts_over_8192":  5,
+                                                               "successful_transcripts_over_3072":  [
+
+                                                                                                    ],
+                                                               "successful_calls_over_6":  0
+                                                           },
+                               "eval-grpo150-easy-medium":  {
+                                                                "transcripts_over_3072":  38,
+                                                                "eval_prompts_over_8192":  21,
+                                                                "successful_transcripts_over_3072":  [
+                                                                                                         "0001_065_1065379_qa_3"
+                                                                                                     ],
+                                                                "successful_calls_over_6":  0
+                                                            }
+                           }
+}

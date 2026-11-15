@@ -1,5 +1,8 @@
 # SmolDataEnvs on 8 GB: SFT distillation vs. GRPO for a 0.6B data-analysis agent
 
+Repository: <https://github.com/kustcl/smoldataenvs-qwen3-0.6b-rtx4060> ·
+SwanLab: <https://swanlab.cn/@cl666/SmolData-GRPO/v1/jwt6a9/overview>
+
 Everything here runs on one consumer laptop (Windows 11, RTX 4060 Laptop, 8 GB VRAM) with
 **Qwen3-0.6B**. It contains a local agent sandbox, an evaluation harness, the SFT and GRPO
 training scripts, and the raw results of the experiments below.
@@ -209,6 +212,49 @@ No-GPU smoke tests: `python eval_harness.py selftest` (mock model, real sandbox)
   dominant failure mode is repeating the same failing command until the turn cap.
 - If RL is retried here: `beta≈0.02` (KL), `lr=1e-6`, ≤ 50 steps, and evaluate sampled
   (T > 0) as well as greedy.
+
+## Would other small models behave the same?
+
+We only ran **Qwen3-0.6B**. It would be wrong to read this as "RL does not work for small
+models" — but it is also wrong to read it as "only this model fails". Our reading, split by what
+we think is a property of the *setup* versus a property of the *model*:
+
+**Likely independent of the model (these are properties of the training regime):**
+
+- **4 generations per optimizer step** is below what GRPO needs for a stable group advantage.
+  Any model gets a noisy gradient at this batch size; the direction of the noise is what changes.
+- **`beta = 0`** leaves nothing anchoring the policy to SFT. Any LoRA fine-tune will drift; drift
+  is not a Qwen property.
+- **Training at T = 0.8 and evaluating greedily** rewards behaviour that only pays off under
+  sampling. Every model that learns "keep trying" during sampling will look worse at T = 0.
+- **A 138-task pool, each task seen once**, cannot support generalisation; the training-reward
+  curve is measured on a different subset every step.
+
+**Model-dependent (why other ~0.5–1B models would differ in degree, not in kind):**
+
+- **Base pass rate.** Screening produces "mixed" tasks only where the model sometimes succeeds.
+  Qwen3-0.6B solves ~25% of easy+medium, giving a ~1/3 mixed rate; a stronger 1B model yields more
+  usable tasks (easier pool), a weaker 360M model fewer (harder pool, more zero-variance groups).
+- **Tool-loop competence.** The failure we saw — repeating the *same failing command* up to 11
+  times — is a capacity/repetition phenomenon. It is common in sub-1B models and rarer as models
+  grow; it is also visible in the *SFT* numbers (25/90 transcripts), so it predates RL.
+- **Chat-template quirks.** Qwen3's `<think></think>` markers and `<|im_end|>` template caused a
+  silent train/eval mismatch here; Llama-3.2, SmolLM2 or Gemma would fail differently, not less.
+- **Sensitivity to format drift under RL** (dropping spaces, appending `%`) is tokenizer- and
+  SFT-data-dependent.
+
+**Testable predictions — we would rather have them tested than asserted** (≈1 day per model on
+this laptop; only `--model` changes):
+
+- **P1.** Qwen2.5-0.5B or Llama-3.2-1B, same protocol, shows the same sign (RL ≤ SFT), with a
+  magnitude roughly tracking the base pass rate.
+- **P2.** At ≥2B with `num_generations = 8` and `beta ≈ 0.02`, RL becomes neutral-to-positive —
+  i.e. what fails here is the *regime* (batch size, no KL, tiny pool), not "small models" as a class.
+- **P3.** SFT data with error-recovery trajectories reduces the loop rate at every model size —
+  the data fix is model-agnostic.
+
+If you have a GPU and a day, P1 is the most useful experiment anyone could run against this
+repo — see *Reproducing*, the model path is the only change.
 
 ## We are asking for help
 
